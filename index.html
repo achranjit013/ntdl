@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>NOT TO DO APP</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <!-- heading -->
+        <div class="row">
+          <div class="col">
+            <h1 class="text-center p-5">Not To Do List</h1>
+          </div>
+        </div>
+
+        <!-- form area -->
+        <form
+          action="javascript:void(0)"
+          onsubmit="handleOnSubmit(this)"
+          class="row g-3 shadow-lg rounded bg-secondary"
+        >
+          <div class="col-md-7">
+            <label for="taskName" class="visually-hidden">Task Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="taskName"
+              name="task"
+              placeholder="Task name"
+              required
+            />
+          </div>
+          <div class="col-md-2">
+            <label for="taskHr" class="visually-hidden">Task Hour</label>
+            <input
+              type="number"
+              min="1"
+              class="form-control"
+              id="taskHr"
+              name="hr"
+              placeholder="Hour"
+              required
+            />
+          </div>
+          <div class="col-md-3">
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary mb-3">
+                <i class="fa-solid fa-plus"></i> Add New task
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- table area -->
+        <div class="row mt-5 pt-2">
+          <!-- entry list -->
+          <div class="col-md">
+            <h3 class="text-center">Task Entry List</h3>
+            <hr />
+
+            <!--  -->
+            <table class="table table-striped table-hover border">
+              <tbody id="entry"></tbody>
+            </table>
+
+            <!-- total time allocated -->
+            <div class="alert alert-info">
+              Total hrs per week allocated = <span id="allHr">0</span> hr
+            </div>
+          </div>
+
+          <!-- bad list -->
+          <div class="col-md">
+            <h3 class="text-center">Bad List</h3>
+            <hr />
+            <!--  -->
+            <table class="table table-striped table-hover border">
+              <tbody id="bad"></tbody>
+            </table>
+
+            <!-- bad time -->
+            <div class="alert alert-info">
+              You could have saved <span id="badHr">0</span> hr
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- my js -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

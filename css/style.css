@@ -1,0 +1,8 @@
+.wrapper {
+  min-height: 100vh;
+  background: lightblue;
+}
+
+table tr td {
+  background-color: transparent !important;
+}
